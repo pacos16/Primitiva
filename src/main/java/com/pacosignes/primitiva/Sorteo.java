@@ -32,6 +32,7 @@ public class Sorteo {
     }
     public Sorteo(int [] numsMasComplementario, int renitegro){
         int i;
+        numeros=new int[6];
         for (i =0;i<numeros.length;i++){
             this.numeros[i]=numsMasComplementario[i];
         }

@@ -1,5 +1,6 @@
 package com.pacosignes.primitiva;
 
+
 public class Database {
 
     private Sorteo arraySorteos;
@@ -9,7 +10,7 @@ public class Database {
 
 
     public static void cotejarApuesta(Apuesta apuesta , Sorteo sorteo){
-        boolean condicion=false;
+
         boolean complementario=false;
         int aciertos=0;
         for(int i =0;i<apuesta.getNumeros().length;i++){
@@ -25,11 +26,15 @@ public class Database {
             }
         }
 
+
         switch (aciertos){
             case 0:
             case 1:
             case 2:
                 apuesta.setPremio(Apuesta.Premiada.NO_PREMIADA);
+                if(apuesta.getReintegro()==sorteo.getReintegro()){
+                    apuesta.setPremio(Apuesta.Premiada.REINTEGRO);
+                }
                 break;
             case 3:
                 apuesta.setPremio(Apuesta.Premiada.QUINTA);
@@ -51,5 +56,6 @@ public class Database {
                     apuesta.setPremio(Apuesta.Premiada.PRIMERA);
                 }
         }
+
     }
 }

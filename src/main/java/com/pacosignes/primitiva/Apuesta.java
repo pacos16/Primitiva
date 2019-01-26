@@ -11,7 +11,7 @@ public class Apuesta {
     private int codAdmin;
     private boolean cotejada;
 
-    public enum Premiada {ESPECIAL, PRIMERA, SEGUNDA, TERCERA, CUARTA,QUINTA, NO_PREMIADA}
+    public enum Premiada {ESPECIAL, PRIMERA, SEGUNDA, TERCERA, CUARTA,QUINTA,REINTEGRO, NO_PREMIADA}
 
     private Premiada premio;
 

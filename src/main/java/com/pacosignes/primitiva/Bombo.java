@@ -17,8 +17,8 @@ public class Bombo {
             bombo[i]=i+1; //es necesario anyadir 1 para que vaya de 1 a 49;
         }
 
-        for(int j=0;j<CANTIDAD_DE_NUMEROS;j++){
-            aleat = rdn.nextInt(bombo.length-j);
+        for(int j=0;j<NUMEROS_POR_APUESTA;j++){
+            aleat = rdn.nextInt((bombo.length-j));
             resultado[j]=bombo[aleat];
             bombo[aleat]=bombo[bombo.length-1-j];
         }
