@@ -8,8 +8,10 @@ public class Apuesta {
     private int reintegro;
     private GregorianCalendar fechaApuesta;
     private GregorianCalendar fechaSorteo;
+    private int codAdmin;
+    private boolean cotejada;
 
-    public enum Premiada {ESPECIAL, PRIMERA, SEGUNDA, TERCERA, CUARTA, NO_PREMIADA}
+    public enum Premiada {ESPECIAL, PRIMERA, SEGUNDA, TERCERA, CUARTA,QUINTA, NO_PREMIADA}
 
     private Premiada premio;
 
@@ -18,11 +20,17 @@ public class Apuesta {
         this.reintegro = reintegro;
     }
 
-    public Apuesta(int[] numeros, int reintegro, GregorianCalendar fechaApuesta, GregorianCalendar fechaSorteo) {
+    public Apuesta(int[] numeros, int reintegro, GregorianCalendar fechaApuesta, GregorianCalendar fechaSorteo, int codAdmin) {
+        //todo modificar fechas
         this.numeros = numeros;
         this.reintegro = reintegro;
         this.fechaApuesta = fechaApuesta;
         this.fechaSorteo = fechaSorteo;
+        this.codAdmin=codAdmin;
+    }
+
+    public void setCotejada(){
+        cotejada=true;
     }
 
     public void setPremio(Premiada premio) {

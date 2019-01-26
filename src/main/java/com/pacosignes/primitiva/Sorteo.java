@@ -30,6 +30,14 @@ public class Sorteo {
         this.complementario = complementario;
         this.reintegro = reintegro;
     }
+    public Sorteo(int [] numsMasComplementario, int renitegro){
+        int i;
+        for (i =0;i<numeros.length;i++){
+            this.numeros[i]=numsMasComplementario[i];
+        }
+        this.complementario=numsMasComplementario[i];
+        this.reintegro=renitegro;
+    }
 
     public void setNumeros(int[] numeros) {
         this.numeros = numeros;
