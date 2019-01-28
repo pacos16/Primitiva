@@ -55,6 +55,7 @@ public class Database {
                 }else{
                     apuesta.setPremio(Apuesta.Premiada.PRIMERA);
                 }
+                break;
         }
 
     }

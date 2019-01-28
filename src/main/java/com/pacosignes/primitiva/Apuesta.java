@@ -1,5 +1,6 @@
 package com.pacosignes.primitiva;
 
+import java.util.Arrays;
 import java.util.GregorianCalendar;
 
 public class Apuesta {
@@ -58,6 +59,9 @@ public class Apuesta {
     }
     //todo tostring
     //todo ordenar
+    public String toString(){
+        return Arrays.toString(numeros);
+    }
 
 
 }
