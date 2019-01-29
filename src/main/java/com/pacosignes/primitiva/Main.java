@@ -1,10 +1,12 @@
 package com.pacosignes.primitiva;
 
 
+
+
 import java.util.Scanner;
 
 public class Main {
-        static Scanner lector=new Scanner(System.in);
+    private static Scanner lector=new Scanner(System.in);
     public static void main(String[] args) {
 
         saludar();
@@ -242,7 +244,8 @@ public class Main {
         s=lector.nextLine();
         if (s.equals("Paco tiene un 11")){
             System.out.println("Paco esta contento");
-            //miPractica();
+
+            miPractica();
 
         }
     }
@@ -281,7 +284,12 @@ public class Main {
         lector.nextLine();
     }
 
-    public static void miPractica(){
+    public static void miPractica() {
+
+        Database db= new Database();
+
+        db.readFile();
+        db.imprime();
 
 
 

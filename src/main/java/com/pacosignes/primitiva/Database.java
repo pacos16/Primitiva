@@ -1,11 +1,34 @@
 package com.pacosignes.primitiva;
+import java.io.*;
+import java.util.Arrays;
 
 
 public class Database {
 
-    private Sorteo arraySorteos;
+    private Sorteo[] arraySorteos;
 
 
+
+    public void readFile() {
+
+        String[] linea;
+        arraySorteos=new Sorteo[10000];
+        int contador=0;
+        try {
+            FileReader f= new FileReader("Primitiva.txt");
+            BufferedReader reader = new BufferedReader(f);
+            String line;
+            while ((line = reader.readLine()) != null) {
+                //process each line in some way
+                linea=line.split("\\s+");
+                arraySorteos[contador]=new Sorteo(linea);
+                contador++;
+            }
+        }catch( IOException e){
+            System.out.println("Lolaso");
+
+        }
+    }
 
 
 
@@ -59,4 +82,13 @@ public class Database {
         }
 
     }
+
+    public void imprime(){
+        for(int i=0;i<100;i++){
+            System.out.println(Arrays.toString(arraySorteos[i].getNumeros()));
+        }
+
+
+    }
 }
+

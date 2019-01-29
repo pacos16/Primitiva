@@ -5,6 +5,7 @@ import java.util.GregorianCalendar;
 public class Sorteo {
     private int idSorteo;
     private GregorianCalendar fechaSorteo;
+    private String fechaString;
     private int[] numeros;
     private int complementario;
     private int reintegro;
@@ -17,6 +18,18 @@ public class Sorteo {
     public Sorteo(int idSorteo, GregorianCalendar fechaSorteo) {
         this.idSorteo = idSorteo;
         this.fechaSorteo = fechaSorteo;
+    }
+    public Sorteo(String[] linea){
+        this.numeros=new int[6];
+        this.fechaString=linea[0];
+        this.numeros[0]=Integer.parseInt(linea[1]);
+        this.numeros[1]=Integer.parseInt(linea[2]);
+        this.numeros[2]=Integer.parseInt(linea[3]);
+        this.numeros[3]=Integer.parseInt(linea[4]);
+        this.numeros[4]=Integer.parseInt(linea[5]);
+        this.numeros[5]=Integer.parseInt(linea[6]);
+        this.complementario=Integer.parseInt(linea[7]);
+
     }
 
     /**
