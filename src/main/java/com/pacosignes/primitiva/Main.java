@@ -66,6 +66,7 @@ public class Main {
      */
     private static long[] diezMilSorteos(){
         Apuesta apuesta=Administracion.manualOAutomatica();
+        System.out.println(apuesta.toString());
         long[] premios=new long[7];
         for(int i=0;i<10000;i++){
             Sorteo sorteo=Bombo.primitiva();
@@ -182,6 +183,7 @@ public class Main {
     }
     private static long[] hastaPremioNR(){
         Apuesta apuesta=Administracion.manualOAutomatica();
+        System.out.println(apuesta.toString());
         long[] premios=new long[8];
         long contador=0;
         while(premios[0]==0 && premios[1]==0 && premios[2]==0 && premios[3]==0 && premios[4]==0 && premios[5]==0){
@@ -219,6 +221,7 @@ public class Main {
     }
     private static long[] hastaPremio(){
         Apuesta apuesta= Administracion.manualOAutomatica();
+        System.out.println(apuesta.toString());
         long[] premios=new long[8];
         int contador=0;
         while(premios[0]==0 && premios[1]==0 && premios[2]==0 && premios[3]==0
