@@ -7,31 +7,6 @@ public class Database {
 
     private Sorteo[] arraySorteos;
 
-
-
-    public void readFile() {
-
-        String[] linea;
-        arraySorteos=new Sorteo[10000];
-        int contador=0;
-        try {
-            FileReader f= new FileReader("Primitiva.txt");
-            BufferedReader reader = new BufferedReader(f);
-            String line;
-            while ((line = reader.readLine()) != null) {
-                //process each line in some way
-                linea=line.split("\\s+");
-                arraySorteos[contador]=new Sorteo(linea);
-                contador++;
-            }
-        }catch( IOException e){
-            System.out.println("Lolaso");
-
-        }
-    }
-
-
-
     public static void cotejarApuesta(Apuesta apuesta , Sorteo sorteo){
 
         boolean complementario=false;
@@ -80,7 +55,30 @@ public class Database {
                 }
                 break;
         }
+        apuesta.setCotejada();
 
+    }
+    public void uploadRegister() {
+
+        String[] linea;
+        arraySorteos=new Sorteo[10000];
+        int contador=0;
+        try {
+            FileReader f= new FileReader("Primitiva.txt");
+            BufferedReader reader = new BufferedReader(f);
+            String line;
+            while ((line = reader.readLine()) != null) {
+                linea=line.split("\\s+");
+                arraySorteos[contador]=new Sorteo(linea);
+                contador++;
+            }
+        }catch( IOException e){
+            System.out.println("Lolaso");
+            System.out.println("En casa funcionaba");
+            System.out.println("Es tu ordenador");
+            System.out.println("Fallar? mi codigo? impossible");
+            System.out.println("Eso sera el antivirus");
+        }
     }
 
     public void imprime(){

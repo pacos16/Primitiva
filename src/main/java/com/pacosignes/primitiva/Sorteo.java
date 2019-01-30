@@ -19,6 +19,11 @@ public class Sorteo {
         this.idSorteo = idSorteo;
         this.fechaSorteo = fechaSorteo;
     }
+
+    /**
+     * Constructor de sorteo para la base de datos de aciertos.
+     * @param linea recibe un vector de strings del documento primitiva.txt
+     */
     public Sorteo(String[] linea){
         this.numeros=new int[6];
         this.fechaString=linea[0];
@@ -33,16 +38,10 @@ public class Sorteo {
     }
 
     /**
-     * Contructor para la practica
-     * @param numeros
-     * @param complementario
-     * @param reintegro
+     * Contructor utilizado en la practiva para generar sorteos aleatorios
+     * @param numsMasComplementario array de ints con los 6 numeros mas el complementario
+     * @param renitegro  recibe un reintegro (0-9)
      */
-    public Sorteo(int[] numeros, int complementario, int reintegro) {
-        this.numeros = numeros;
-        this.complementario = complementario;
-        this.reintegro = reintegro;
-    }
     public Sorteo(int [] numsMasComplementario, int renitegro){
         int i;
         numeros=new int[6];

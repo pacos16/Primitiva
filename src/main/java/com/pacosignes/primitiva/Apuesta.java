@@ -7,6 +7,7 @@ public class Apuesta {
 
     private int[] numeros;
     private int reintegro;
+    //todo implementar calendars
     private GregorianCalendar fechaApuesta;
     private GregorianCalendar fechaSorteo;
     private int codAdmin;
@@ -21,11 +22,11 @@ public class Apuesta {
         this.reintegro = reintegro;
     }
 
-    public Apuesta(int[] numeros, int reintegro, GregorianCalendar fechaApuesta, GregorianCalendar fechaSorteo, int codAdmin) {
+    public Apuesta(int[] numeros, int reintegro, GregorianCalendar fechaSorteo, int codAdmin) {
         //todo modificar fechas
         this.numeros = numeros;
         this.reintegro = reintegro;
-        this.fechaApuesta = fechaApuesta;
+        //this.fechaApuesta
         this.fechaSorteo = fechaSorteo;
         this.codAdmin=codAdmin;
     }
@@ -60,7 +61,7 @@ public class Apuesta {
     //todo tostring
     //todo ordenar
     public String toString(){
-        return Arrays.toString(numeros);
+        return Arrays.toString(numeros)+" R: "+reintegro;
     }
 
 

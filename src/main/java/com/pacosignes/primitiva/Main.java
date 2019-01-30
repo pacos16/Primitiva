@@ -1,14 +1,11 @@
 package com.pacosignes.primitiva;
 
-
-
-
 import java.util.Scanner;
 
 public class Main {
     private static Scanner lector=new Scanner(System.in);
     public static void main(String[] args) {
-
+        //Holi
         saludar();
 
         int menu;
@@ -54,8 +51,15 @@ public class Main {
         System.out.println("5. Bucle hasta especial");
     }
 
+    /**
+     * Metodo diezmil sorteos
+     * Crea un array resultados con los premios de diferentes categorias y luego lo rellena
+     * cotejando apuestas con el metodo de la base de datos.
+     * todos los otros metodos son un copiapega de este modificados
+     * @return
+     */
     private static long[] diezMilSorteos(){
-        Apuesta apuesta=Administracion.generarApuesta(49,6);
+        Apuesta apuesta=Administracion.manualOAutomatica();
         long[] premios=new long[7];
         for(int i=0;i<10000;i++){
             Sorteo sorteo=Bombo.primitiva();
@@ -88,6 +92,11 @@ public class Main {
         return premios;
 
     }
+
+    /**
+     * Este es el metodo que muestra resultados, recibe un array de long porsiaca
+     * @param premios
+     */
     private static void mostrarResultados(long[] premios){
         if(premios[0]!=0) {
             System.out.println("Categoria especial: " + premios[0]);
@@ -119,8 +128,12 @@ public class Main {
 
     }
 
+    /**
+     * Metodo que generasorteos hasta que encuentra el especial
+     * @return
+     */
     private static long[] hastaEspecial(){
-        Apuesta apuesta=Administracion.generarApuesta(49,6);
+        Apuesta apuesta=Administracion.manualOAutomatica();
         System.out.println(apuesta.toString());
         long[] premios=new long[8];
         int contador=0;
@@ -162,7 +175,7 @@ public class Main {
 
     }
     private static long[] hastaPremioNR(){
-        Apuesta apuesta=Administracion.generarApuesta(49,6);
+        Apuesta apuesta=Administracion.manualOAutomatica();
         long[] premios=new long[8];
         long contador=0;
         while(premios[0]==0 && premios[1]==0 && premios[2]==0 && premios[3]==0 && premios[4]==0 && premios[5]==0){
@@ -199,7 +212,7 @@ public class Main {
 
     }
     private static long[] hastaPremio(){
-        Apuesta apuesta=Administracion.generarApuesta(49,6);
+        Apuesta apuesta= Administracion.manualOAutomatica();
         long[] premios=new long[8];
         int contador=0;
         while(premios[0]==0 && premios[1]==0 && premios[2]==0 && premios[3]==0
@@ -237,21 +250,10 @@ public class Main {
         return premios;
 
     }
-    private static void saludar(){
-        String s;
-        System.out.println("Practica 1");
-        System.out.println("Pulse intro para continuar");
-        s=lector.nextLine();
-        if (s.equals("Paco tiene un 11")){
-            System.out.println("Paco esta contento");
 
-            miPractica();
-
-        }
-    }
     private static void unaApuesta(){
-        Apuesta apuesta=Administracion.generarApuesta(49,6);
-        int[] premios=new int[8];
+        Apuesta apuesta=Administracion.manualOAutomatica();
+        System.out.println(apuesta.toString());
         Sorteo sorteo=Bombo.primitiva();
         Database.cotejarApuesta(apuesta, sorteo);
 
@@ -284,15 +286,69 @@ public class Main {
         lector.nextLine();
     }
 
+
+//fin
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    private static void saludar(){
+        String s;
+        System.out.println("Practica Loteria");
+        System.out.println("Pulse intro para continuar");
+        s=lector.nextLine();
+        if (s.equals("Paco tiene un 11")){
+            System.out.println("Paco esta contento");
+
+            miPractica();
+
+        }
+    }
     public static void miPractica() {
 
         Database db= new Database();
-
-        db.readFile();
+        db.uploadRegister();
         db.imprime();
-
-
-
+        //animation
+        //todo menu
+        //numeros calientes
+        //numeros frios
     }
 
 
