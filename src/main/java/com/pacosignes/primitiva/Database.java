@@ -7,6 +7,11 @@ public class Database {
 
     private Sorteo[] arraySorteos;
 
+    /**
+     * Metodo que cotjea las apuestas, recibe un objeto de la classe apuesta y uno de la clase sorteo.
+     * @param apuesta
+     * @param sorteo
+     */
     public static void cotejarApuesta(Apuesta apuesta , Sorteo sorteo){
 
         boolean complementario=false;
@@ -76,7 +81,7 @@ public class Database {
             System.out.println("Lolaso");
             System.out.println("En casa funcionaba");
             System.out.println("Es tu ordenador");
-            System.out.println("Fallar? mi codigo? impossible");
+            System.out.println("Fallar? mi codigo? imposible");
             System.out.println("Eso sera el antivirus");
         }
     }
@@ -91,21 +96,26 @@ public class Database {
 
     public String numerosCalientes(){
         int i=0;
-        int[] cVeces=new int[48];
+        int[] cVeces=new int[49];
         int[] frios=new int[5];
         int[] calientes=new int[5];
-        int max=0;
-        int posicionMax=-1;
-        int min=50;
-        int posicionMin=-1;
-        while(arraySorteos[i]!=null){
+        int max;
+        int posicionMax;
+        int min;
+        int posicionMin;
+        while(arraySorteos[i]!=null && i<arraySorteos.length){
             for (int j=0;j<arraySorteos[i].getNumeros().length;j++){
                 cVeces[arraySorteos[i].getNumeros()[j]-1]++;
             }
             i++;
         }
 
+
         for(int k=0;k<frios.length;k++){
+            max=0;
+            posicionMax=0;
+            min=500000000;
+            posicionMin=0;
             for (int l=0;l<cVeces.length;l++){
 
                 if(cVeces[l]!=-1){
@@ -122,13 +132,13 @@ public class Database {
                 }
 
             }
-            cVeces[posicionMax+1]=-1;
-            cVeces[posicionMin+1]=-1;
+            cVeces[posicionMax-1]=-1;
+            cVeces[posicionMin-1]=-1;
             frios[k]=posicionMin;
             calientes[k]=posicionMax;
 
         }
-        return Arrays.toString(frios)+Arrays.toString(calientes);
+        return "Numeros que menos salen: "+Arrays.toString(frios)+"\nNumeros que mas salen: "+Arrays.toString(calientes);
 
     }
 

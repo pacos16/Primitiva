@@ -7,7 +7,7 @@ public class Administracion {
     private static Random rdn= new Random();
     private static Scanner lector=new Scanner(System.in);
 
-    private int codAdmin;
+    private int codAdmin;//todo para implementar base datos admins
 
 
 
@@ -37,6 +37,11 @@ public class Administracion {
         return new Apuesta(resultado,rdn.nextInt(10));
 
     }
+
+    /**
+     * Generar apuesta manual. son varios bucles que comprueban si un numero esta introducido ya en la apuesta.
+     * @return
+     */
     public static Apuesta apuestaManual(){
         System.out.println("Introduce los 6 numeros uno a uno");
         int []numeros=new int[6];
@@ -67,6 +72,12 @@ public class Administracion {
 
         return new Apuesta(numeros, rdn.nextInt(10));
     }
+
+    /**
+     * Metodo de ordenacion fasil y sensillo para toda dla familia;
+     * @param array resibe un array desordenado
+     * @return lo devuelve ordenado :)
+     */
     private static int[] ordenarArray(int[] array){
         int aux;
         for(int i=0;i<array.length;i++){
@@ -80,6 +91,11 @@ public class Administracion {
         }
         return array;
     }
+
+    /**
+     * Menu para decidir y crear apuestas manuales o automaticas
+     * @return
+     */
     public static Apuesta manualOAutomatica(){
         int menu;
         do{
@@ -103,7 +119,7 @@ public class Administracion {
 
     }
 
-    //metodos simulacion
+
 
 
 

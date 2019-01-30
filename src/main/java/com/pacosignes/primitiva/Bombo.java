@@ -18,7 +18,7 @@ public class Bombo {
         }
 
         for(int j=0;j<NUMEROS_POR_APUESTA;j++){
-            aleat = rdn.nextInt((bombo.length-j));
+            aleat = rdn.nextInt((bombo.length-j));//creamos aleatorios cada vez mas pequeños
             resultado[j]=bombo[aleat];
             bombo[aleat]=bombo[bombo.length-1-j];
         }
@@ -27,7 +27,11 @@ public class Bombo {
     }
 
 
-
+    /**
+     * Metodo de ordenacion.
+     * @param array
+     * @return
+     */
     private static int[] ordenarArray(int[] array){
         int aux;
         for(int i=0;i<array.length;i++){

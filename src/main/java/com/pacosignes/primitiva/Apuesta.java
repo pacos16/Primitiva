@@ -17,11 +17,16 @@ public class Apuesta {
 
     private Premiada premio;
 
+    /**
+     * Constructor utilizado en la practica
+     * @param numeros
+     * @param reintegro
+     */
     public Apuesta(int[] numeros, int reintegro) {
         this.numeros = numeros;
         this.reintegro = reintegro;
     }
-
+    //utilizar este constructor en un futuro, alomejor hago otra classe
     public Apuesta(int[] numeros, int reintegro, GregorianCalendar fechaSorteo, int codAdmin) {
         //todo modificar fechas
         this.numeros = numeros;
@@ -60,6 +65,11 @@ public class Apuesta {
     }
     //todo tostring
     //todo ordenar
+
+    /**
+     * El tipico toString.
+     * @return
+     */
     public String toString(){
         return Arrays.toString(numeros)+" R: "+reintegro;
     }

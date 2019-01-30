@@ -42,6 +42,10 @@ public class Main {
 
     }
 
+
+    /**
+     * Mega menu de opciones
+     */
     public static void mostrarMenu(){
         System.out.println("***Loteria***\n");
         System.out.println("1. Una apuesta");
@@ -49,6 +53,8 @@ public class Main {
         System.out.println("3. Sorteo hasta premio,sin reintegro");
         System.out.println("4. Diez mil sorteos");
         System.out.println("5. Bucle hasta especial");
+        System.out.println("-------------------------");
+        System.out.println("0.Salir");
     }
 
     /**
@@ -344,13 +350,40 @@ public class Main {
 
         Database db= new Database();
         db.uploadRegister();
-        db.imprime();
-        //animation
-        System.out.println(db.numerosCalientes());
 
-        //todo menu
-        //numeros calientes
-        //numeros amigos
+        System.out.print("\u001B[H\u001B[2J");
+        System.out.flush();
+
+        try{
+            Thread.sleep(500);
+        }catch(InterruptedException e){
+            System.out.println("Maldtio thread sleep");
+        }
+        int i=30;
+        do {
+            System.out.printf("\u001B[1;"+i+"mBienvenido a mi practica\n\u001B[0m");
+            try {
+                Thread.sleep(500);
+            } catch (InterruptedException e) {
+                System.out.println("Maldtio thread sleep");
+            }
+            System.out.print("\u001B[H\u001B[2J");
+            System.out.flush();
+            i++;
+        }while(i<36);
+        System.out.println(db.numerosCalientes());
+        try{
+            Thread.sleep(1200);
+        }catch(InterruptedException e){
+            System.out.println("Maldtio thread sleep");
+        }
+
+
+
+        System.out.println("Pulse intro para continuar a la practica standart");
+        lector.nextLine();
+        System.out.print("\u001B[H\u001B[2J");
+        System.out.flush();
 
 
     }
