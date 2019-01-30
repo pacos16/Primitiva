@@ -346,10 +346,16 @@ public class Main {
         db.uploadRegister();
         db.imprime();
         //animation
+        System.out.println(db.numerosCalientes());
+
         //todo menu
         //numeros calientes
-        //numeros frios
+        //numeros amigos
+
+
     }
+
+
 
 
 

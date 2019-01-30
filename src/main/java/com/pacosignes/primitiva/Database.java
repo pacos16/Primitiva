@@ -88,5 +88,50 @@ public class Database {
 
 
     }
+
+    public String numerosCalientes(){
+        int i=0;
+        int[] cVeces=new int[48];
+        int[] frios=new int[5];
+        int[] calientes=new int[5];
+        int max=0;
+        int posicionMax=-1;
+        int min=50;
+        int posicionMin=-1;
+        while(arraySorteos[i]!=null){
+            for (int j=0;j<arraySorteos[i].getNumeros().length;j++){
+                cVeces[arraySorteos[i].getNumeros()[j]-1]++;
+            }
+            i++;
+        }
+
+        for(int k=0;k<frios.length;k++){
+            for (int l=0;l<cVeces.length;l++){
+
+                if(cVeces[l]!=-1){
+
+                    if(cVeces[l]<min){
+                        min=cVeces[l];
+                        posicionMin=l+1;
+                    }
+                    if(cVeces[l]>max){
+                        max=cVeces[l];
+                        posicionMax=l+1;
+                    }
+
+                }
+
+            }
+            cVeces[posicionMax+1]=-1;
+            cVeces[posicionMin+1]=-1;
+            frios[k]=posicionMin;
+            calientes[k]=posicionMax;
+
+        }
+        return Arrays.toString(frios)+Arrays.toString(calientes);
+
+    }
+
+
 }
 
