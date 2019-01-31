@@ -138,7 +138,7 @@ public class Database {
             calientes[k]=posicionMax;
 
         }
-        return "Numeros que menos salen: "+Arrays.toString(frios)+"\nNumeros que mas salen: "+Arrays.toString(calientes);
+        return "Numeros que menos salen: "+Arrays.toString(frios)+"\nNumeros que mas salen:   "+Arrays.toString(calientes);
 
     }
 

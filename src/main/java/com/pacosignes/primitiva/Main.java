@@ -1,5 +1,6 @@
 package com.pacosignes.primitiva;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
@@ -145,8 +146,9 @@ public class Main {
         long[] premios=new long[8];
         int contador=0;
         System.out.println("Paciencia....");
+        Sorteo sorteo=new Sorteo();
         while(premios[0]!=1){
-            Sorteo sorteo=Bombo.primitiva();
+            sorteo = Bombo.primitiva();
             apuesta.setPremio(Apuesta.Premiada.NO_PREMIADA);
             Database.cotejarApuesta(apuesta, sorteo);
 
@@ -176,6 +178,7 @@ public class Main {
             contador++;
 
         }
+        System.out.println(Arrays.toString(sorteo.getNumeros()));
         premios[7]=contador;
 
         return premios;

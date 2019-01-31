@@ -36,6 +36,9 @@ public class Sorteo {
         this.complementario=Integer.parseInt(linea[7]);
 
     }
+    public Sorteo(){
+
+    }
 
     /**
      * Contructor utilizado en la practiva para generar sorteos aleatorios
